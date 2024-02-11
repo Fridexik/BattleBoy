@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://oyj1tfdfpmqs"]
+[gd_scene load_steps=3 format=3 uid="uid://oyj1tfdfpmqs"]
 
 [sub_resource type="Curve" id="Curve_aevs0"]
 min_value = 0.2
-_data = [Vector2(0.1, 0.076923), 0.0, 0.0, 0, 0, Vector2(0.842105, 1), 0.0, 0.0, 0, 0, Vector2(0.989474, 0.648352), -7.79485, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0.1, 0.076923), 0.0, 0.0, 0, 0, Vector2(0.943262, 0.70989), 0.0, 0.0, 0, 0, Vector2(0.971631, 1), 0.0, 0.0, 0, 0, Vector2(0.985816, 0.296703), -7.79485, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_gyv81"]
+offsets = PackedFloat32Array(0, 0.990099, 1)
+colors = PackedColorArray(1, 0, 1, 1, 1, 0.984314, 0, 1, 0.594059, 0.594059, 0.594059, 1)
 
 [node name="CardArc" type="Line2D"]
 width = 8.0
 width_curve = SubResource("Curve_aevs0")
+gradient = SubResource("Gradient_gyv81")

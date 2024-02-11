@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=4 format=3 uid="uid://cypf3k3ct5ebe"]
+
+[ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="1_753bu"]
+[ext_resource type="Resource" uid="uid://bt7do6l4iulq7" path="res://player_ships/battlestar/cards/railgun_attack.tres" id="1_w03ie"]
+[ext_resource type="Resource" uid="uid://wpqddk3iua37" path="res://player_ships/battlestar/cards/shield.tres" id="2_jj1tg"]
+
+[resource]
+script = ExtResource("1_753bu")
+cards = Array[Resource("res://custom_resources/card.gd")]([ExtResource("1_w03ie"), ExtResource("1_w03ie"), ExtResource("1_w03ie"), ExtResource("1_w03ie"), ExtResource("1_w03ie"), ExtResource("2_jj1tg"), ExtResource("2_jj1tg"), ExtResource("2_jj1tg"), ExtResource("2_jj1tg"), ExtResource("2_jj1tg")])
