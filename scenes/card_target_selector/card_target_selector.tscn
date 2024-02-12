@@ -7,6 +7,7 @@
 size = Vector2(10, 10)
 
 [node name="CardTargetSelector" type="Node2D"]
+visibility_layer = 4
 script = ExtResource("1_8ud56")
 
 [node name="Area2D" type="Area2D" parent="."]

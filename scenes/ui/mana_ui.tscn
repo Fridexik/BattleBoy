@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuc7103edlgao"]
+
+[ext_resource type="Theme" uid="uid://yoe61bl67n4s" path="res://main_theme.tres" id="1_um58p"]
+[ext_resource type="Script" path="res://scenes/ui/mana_ui.gd" id="2_3uh0u"]
+[ext_resource type="Resource" uid="uid://ckqcnvlfft1lx" path="res://player_ships/battlestar/battlestar.tres" id="3_pm4o5"]
+
+[node name="ManaUI" type="Panel"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -80.0
+offset_right = 84.0
+offset_bottom = -30.0
+grow_vertical = 0
+theme = ExtResource("1_um58p")
+script = ExtResource("2_3uh0u")
+char_stats = ExtResource("3_pm4o5")
+
+[node name="ManaLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1

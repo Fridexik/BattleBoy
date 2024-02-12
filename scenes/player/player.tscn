@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cff3usni42137"]
+[gd_scene load_steps=5 format=3 uid="uid://cff3usni42137"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ocjw0"]
-[ext_resource type="Texture2D" uid="uid://bqofg5uqd6rcf" path="res://icon.svg" id="1_uwf1o"]
 [ext_resource type="PackedScene" uid="uid://hc3tvmgiq4ky" path="res://scenes/ui/stats_ui.tscn" id="2_86m2u"]
+[ext_resource type="Resource" uid="uid://ckqcnvlfft1lx" path="res://player_ships/battlestar/battlestar.tres" id="2_qytdj"]
+[ext_resource type="Texture2D" uid="uid://cg2bi72qwb48g" path="res://art/battlestar.png" id="3_443m1"]
 
 [node name="Player" type="Node2D" groups=["player"]]
 script = ExtResource("1_ocjw0")
+stats = ExtResource("2_qytdj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_uwf1o")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_443m1")
 
 [node name="StatsUI" parent="." instance=ExtResource("2_86m2u")]
 offset_top = 79.0

@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://wpqddk3iua37"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://wpqddk3iua37"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_55qbd"]
+[ext_resource type="Texture2D" uid="uid://btmvut3ycvlcu" path="res://art/Shield5.png" id="1_becu2"]
+[ext_resource type="Script" path="res://player_ships/battlestar/cards/shield.gd" id="2_foo6r"]
 
 [resource]
-script = ExtResource("1_55qbd")
+script = ExtResource("2_foo6r")
 id = "shield"
 type = 1
 target = 0
+cost = 1
+icon = ExtResource("1_becu2")
+tooltip = ""

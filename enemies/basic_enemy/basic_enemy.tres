@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://brk63f2cht1ll"]
 
-[ext_resource type="Texture2D" uid="uid://bqofg5uqd6rcf" path="res://icon.svg" id="1_a07gr"]
 [ext_resource type="Script" path="res://custom_resources/stats.gd" id="1_pncww"]
+[ext_resource type="Texture2D" uid="uid://bjkxfbthria20" path="res://art/ship1.png" id="1_uvoeb"]
 
 [resource]
 script = ExtResource("1_pncww")
 max_health = 10
-art = ExtResource("1_a07gr")
+art = ExtResource("1_uvoeb")

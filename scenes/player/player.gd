@@ -21,7 +21,7 @@ func update_player()-> void:
 		return
 	if not is_inside_tree():
 		await ready
-		
+	sprite_2d.rotation_degrees = 90	
 	sprite_2d.texture = stats.art
 	update_stats()
 	

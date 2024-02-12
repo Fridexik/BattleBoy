@@ -9,6 +9,9 @@ const OFFSET_ARROW := 5
 @onready var arrow: Sprite2D = $Arrow
 @onready var stats_ui:StatsUI = $StatsUI as StatsUI
 
+func _ready():
+	stats.block=5
+	
 
 func set_enemy_stats(value: Stats) -> void:
 	stats= value.create_instance()
@@ -26,7 +29,8 @@ func update_enemy()-> void:
 		await ready
 		
 	sprite_2d.texture = stats.art
-	arrow.position= Vector2.RIGHT * (sprite_2d.get_rect().size.x /2 + OFFSET_ARROW)
+	sprite_2d.rotation_degrees = -90
+	arrow.scale= sprite_2d.scale*3.5
 	update_stats()
 	
 
@@ -40,3 +44,11 @@ func take_damage(damage: int) -> void:
 	
 	if stats.health <=0:
 		queue_free()
+
+
+func _on_area_entered(_area):
+	arrow.show() # Replace with function body.
+
+
+func _on_area_exited(_area):
+	arrow.hide() # Replace with function body.

@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cktw3blxjxed7" path="res://scenes/cardUI/card_ui.tscn" id="2_andrh"]
 [ext_resource type="PackedScene" uid="uid://box8jjak0fmrp" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_a3r1x"]
 [ext_resource type="PackedScene" uid="uid://cff3usni42137" path="res://scenes/player/player.tscn" id="3_l8vky"]
-[ext_resource type="Resource" uid="uid://brk63f2cht1ll" path="res://enemies/basic_enemy/basic_enemy.tres" id="3_xwv7p"]
 [ext_resource type="Resource" uid="uid://bt7do6l4iulq7" path="res://player_ships/battlestar/cards/railgun_attack.tres" id="4_8jm25"]
 [ext_resource type="Resource" uid="uid://ckqcnvlfft1lx" path="res://player_ships/battlestar/battlestar.tres" id="4_efv6l"]
 [ext_resource type="Resource" uid="uid://wpqddk3iua37" path="res://player_ships/battlestar/cards/shield.tres" id="5_57i7e"]
+[ext_resource type="PackedScene" uid="uid://cuc7103edlgao" path="res://scenes/ui/mana_ui.tscn" id="5_m63ax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sro6l"]
 size = Vector2(1150, 413)
@@ -38,15 +38,16 @@ debug_color = Color(0, 0.6, 0.701961, 0.105882)
 
 [node name="Enemy" parent="." instance=ExtResource("2_8gmn4")]
 position = Vector2(1004, 213)
-stats = ExtResource("3_xwv7p")
 
 [node name="Player" parent="." instance=ExtResource("3_l8vky")]
 position = Vector2(174, 201)
-stats = ExtResource("4_efv6l")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_a3r1x")]
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="ManaUI" parent="BattleUI" instance=ExtResource("5_m63ax")]
+char_stats = ExtResource("4_efv6l")
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI"]
 anchors_preset = 7

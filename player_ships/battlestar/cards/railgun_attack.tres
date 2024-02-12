@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://bt7do6l4iulq7"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bt7do6l4iulq7"]
 
-[ext_resource type="Script" path="res://custom_resources/card.gd" id="1_lww3y"]
+[ext_resource type="Texture2D" uid="uid://bewusaa3f24ik" path="res://art/railgun1.png" id="1_pgvhy"]
+[ext_resource type="Script" path="res://player_ships/battlestar/cards/railgun_attack.gd" id="2_etfr3"]
 
 [resource]
-script = ExtResource("1_lww3y")
+script = ExtResource("2_etfr3")
 id = "railgun_attack"
 type = 0
 target = 1
+cost = 1
+icon = ExtResource("1_pgvhy")
+tooltip = ""
