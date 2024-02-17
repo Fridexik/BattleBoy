@@ -1,20 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctwurprcfjco2"]
+[gd_scene load_steps=13 format=3 uid="uid://ctwurprcfjco2"]
 
 [ext_resource type="Texture2D" uid="uid://qwxhu533wtyn" path="res://art/background_template.png" id="1_aa5fx"]
+[ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_tu4up"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_6exgg"]
 [ext_resource type="PackedScene" uid="uid://uawv4066unw8" path="res://scenes/enemies/enemy.tscn" id="2_8gmn4"]
-[ext_resource type="PackedScene" uid="uid://cktw3blxjxed7" path="res://scenes/cardUI/card_ui.tscn" id="2_andrh"]
+[ext_resource type="Resource" uid="uid://ckqcnvlfft1lx" path="res://player_ships/battlestar/battlestar.tres" id="2_s6amr"]
 [ext_resource type="PackedScene" uid="uid://box8jjak0fmrp" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_a3r1x"]
 [ext_resource type="PackedScene" uid="uid://cff3usni42137" path="res://scenes/player/player.tscn" id="3_l8vky"]
-[ext_resource type="Resource" uid="uid://bt7do6l4iulq7" path="res://player_ships/battlestar/cards/railgun_attack.tres" id="4_8jm25"]
-[ext_resource type="Resource" uid="uid://ckqcnvlfft1lx" path="res://player_ships/battlestar/battlestar.tres" id="4_efv6l"]
-[ext_resource type="Resource" uid="uid://wpqddk3iua37" path="res://player_ships/battlestar/cards/shield.tres" id="5_57i7e"]
 [ext_resource type="PackedScene" uid="uid://cuc7103edlgao" path="res://scenes/ui/mana_ui.tscn" id="5_m63ax"]
+[ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="6_gygfw"]
+[ext_resource type="Script" path="res://scenes/player/player_handeler.gd" id="7_lwv2g"]
+[ext_resource type="PackedScene" uid="uid://lbdqq5c1seim" path="res://scenes/ui/tooltip.tscn" id="10_erqv4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sro6l"]
 size = Vector2(1150, 413)
 
 [node name="Battle" type="Node2D"]
+script = ExtResource("1_tu4up")
+char_stats = ExtResource("2_s6amr")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -44,10 +47,14 @@ position = Vector2(174, 201)
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_a3r1x")]
 
+[node name="PlayerHandeler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+script = ExtResource("7_lwv2g")
+hand = NodePath("../BattleUI/Hand")
+
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+script = ExtResource("6_gygfw")
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("5_m63ax")]
-char_stats = ExtResource("4_efv6l")
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI"]
 anchors_preset = 7
@@ -64,14 +71,8 @@ grow_vertical = 0
 alignment = 1
 script = ExtResource("2_6exgg")
 
-[node name="CardUI" parent="BattleUI/Hand" instance=ExtResource("2_andrh")]
-layout_mode = 2
-card = ExtResource("4_8jm25")
-
-[node name="CardUI2" parent="BattleUI/Hand" instance=ExtResource("2_andrh")]
-layout_mode = 2
-card = ExtResource("4_8jm25")
-
-[node name="CardUI3" parent="BattleUI/Hand" instance=ExtResource("2_andrh")]
-layout_mode = 2
-card = ExtResource("5_57i7e")
+[node name="Tooltip" parent="BattleUI" instance=ExtResource("10_erqv4")]
+offset_left = -298.0
+offset_top = 23.0
+offset_right = 302.0
+offset_bottom = 173.0

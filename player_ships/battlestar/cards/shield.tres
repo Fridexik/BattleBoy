@@ -10,4 +10,4 @@ type = 1
 target = 0
 cost = 1
 icon = ExtResource("1_becu2")
-tooltip = ""
+tooltip = "Add shield to our ship"

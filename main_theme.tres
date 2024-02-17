@@ -4,3 +4,4 @@
 
 [resource]
 Panel/styles/panel = ExtResource("1_ib54x")
+PanelContainer/styles/panel = ExtResource("1_ib54x")
